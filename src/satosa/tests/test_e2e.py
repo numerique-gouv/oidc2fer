@@ -13,7 +13,9 @@ def browser_context_args():
 def renater_test_idp(page):
     page.get_by_label("Nom d'utilisateur").fill("etudiant1")
     page.get_by_label("Mot de passe").fill("etudiant1")
+    page.get_by_label("Afficher les informations qui vont être transférées").check()
     page.get_by_role("button", name="Connexion").click()
+    page.get_by_role("button", name="Accepter").click()
 
 
 def renater_wayf(page):
