@@ -68,6 +68,12 @@ def oidc_callback():
 
     assert aresp["state"] == session["state"]
 
+    if "error" in aresp:
+        return jsonify(
+            error_response=aresp.to_dict(),
+        )
+
+
     code = aresp["code"]
     logging.info("got auth code=%s", code)
 
