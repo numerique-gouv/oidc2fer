@@ -25,6 +25,9 @@ attributes:
   eppn:
     saml:
       - eduPersonPrincipalName
+  eduPersonAffiliation:
+    saml:
+      - eduPersonAffiliation
   uid:
     openid:
       - uid

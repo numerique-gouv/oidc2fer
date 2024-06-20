@@ -1,0 +1,9 @@
+module: satosa.micro_services.attribute_authorization.AttributeAuthorization
+name: AttributeAuthorization
+config:
+  force_attributes_presence_on_allow: true
+  attribute_allow:
+    default: # any requester (SP/RP)
+      default: # any issuer (IdP/OP)
+        eduPersonAffiliation:
+          - "^staff$"
