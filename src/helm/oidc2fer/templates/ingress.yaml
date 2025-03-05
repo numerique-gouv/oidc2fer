@@ -47,5 +47,22 @@ spec:
             {{- toYaml . | nindent 10 }}
           {{- end }}
     {{- end }}
+    {{- range .Values.ingress.tls.additional }}
+    {{- range .hosts }}
+    - host: {{ . | quote }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "oidc2fer.satosa.fullname" $ }}
+                port:
+                  number: {{ $.Values.satosa.service.port }}
+          {{- with $.Values.ingress.customBackends }}
+            {{- toYaml . | nindent 10 }}
+          {{- end }}
+    {{- end }}
+    {{- end }}
 {{- end }}
 
