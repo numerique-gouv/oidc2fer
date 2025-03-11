@@ -40,5 +40,10 @@ satosa:
 ingress:
   enabled: true
   host: oidc2fer.127.0.0.1.nip.io
+  tls:
+    additional:
+      - hosts:
+          - oidc2fer2.127.0.0.1.nip.io
+        secretName: oidc2fer2-tls
   annotations:
     nginx.ingress.kubernetes.io/proxy-buffer-size: 128k
