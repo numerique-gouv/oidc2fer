@@ -24,7 +24,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "SATOSA==8.5.1",
-    "gunicorn==22.0.0",
+    "gunicorn==23.0.0",
     "redis==5.0.4",
     "JSON-log-formatter==1.0",
     "WhiteNoise==6.7.0",
